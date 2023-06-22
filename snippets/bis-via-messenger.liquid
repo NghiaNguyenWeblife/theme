@@ -1,0 +1,21 @@
+{% comment %}
+Don't edit this file.
+This snippet is auto generated and will be overwritten.
+{% endcomment %}
+
+<script id="bis-via-messenger">
+  var _BisViaMessengerConfig = _BisViaMessengerConfig || {};
+  _BisViaMessengerConfig.lang = "{{ shop.locale }}";
+  _BisViaMessengerConfig.shop_domain = "{{ shop.permanent_domain }}";
+
+{% if product %}
+  _BisViaMessengerConfig.product = {{ product | json }};
+{% endif %}
+{% if customer %}
+  _BisViaMessengerConfig.customer = {
+    id: {{ customer.id | json }},
+    first_name: {{ customer.first_name | json }},
+    email: {{ customer.email | json }}
+  };
+{% endif %}
+</script>
